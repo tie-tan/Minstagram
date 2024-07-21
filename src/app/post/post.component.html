@@ -1,0 +1,16 @@
+<h2>{{ post?.title }}</h2>
+<p>
+  {{ post?.description }}
+</p>
+<img src="{{ post?.imagePath }}" class="img-responsive" />
+<p>Auther: {{ post?.author }}</p>
+<p>Date: {{ post?.datetimeCreated }}</p>
+<!-- <button class="heart-button" (click) = "onlike(index)">
+  <i class="fa" [ngClass]="{ 'fa-heart': true, 'fa-heart-o': true}"></i>
+</button> -->
+<div class="flex">
+  <yt-button-heart [isLiked]="isHeartOn[index]" [size]="80" (click)="onlike(index)"></yt-button-heart>
+  <span>{{post?.numberOfLikes}}</span>
+</div>
+<button (click)="updatePost(post!,index)">Edit</button> | <button (click)="onDelete()">Delete</button>
+<hr />
